@@ -1,6 +1,6 @@
 const express=require("express");
 const hbs=require("hbs");
-
+var port = process.env.PORT || 3000;
 var app=express();
 hbs.registerPartials(__dirname+'/public/partials')
 app.set('view engine','hbs');
@@ -24,4 +24,4 @@ res.render('about.hbs',{
 app.get('/bad',(req,res)=>{
 res.send({errorMessage:'some error'});
 });
-app.listen(3000);
+app.listen(port);
